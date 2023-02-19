@@ -1,9 +1,10 @@
 {
     "name": "jan-herman/kirby-tracy",
     "description": "Kirby implementation of Tracy debugger.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "kirby-plugin",
     "license": "MIT",
+    "homepage": "https://github.com/jan-herman/kirby-tracy",
     "authors": [
         {
             "name": "Jan Herman",
@@ -16,10 +17,10 @@
         "getkirby/composer-installer": "^1.2",
         "tracy/tracy": "^2.9"
     },
+    "extra": {
+		"installer-name": "tracy"
+	},
     "config": {
-        "optimize-autoloader": true,
-        "allow-plugins": {
-            "getkirby/composer-installer": true
-        }
+        "optimize-autoloader": true
     }
 }

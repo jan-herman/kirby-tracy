@@ -3,7 +3,7 @@
 use Kirby\Cms\App as Kirby;
 use Tracy\Debugger;
 
-Kirby::plugin('jan-herman/kirby-tracy', [
+Kirby::plugin('jan-herman/tracy', [
     'options' => [
         'adminEmail'    => null,
         'editor'        => 'vscode://file/%file:%line',
@@ -16,13 +16,13 @@ Kirby::plugin('jan-herman/kirby-tracy', [
             $current_url_base_path = Url::toObject()->path()->first();
 
             // disable in panel
-            if (!option('jan-herman.kirby-tracy.enableInPanel') && $panel_slug === $current_url_base_path) {
+            if (!option('jan-herman.tracy.enableInPanel') && $panel_slug === $current_url_base_path) {
                 return;
             }
 
             Debugger::enable(Debugger::DETECT, $kirby->root('logs'));
-            Debugger::$email = option('jan-herman.kirby-tracy.adminEmail');
-            Debugger::$editor = option('jan-herman.kirby-tracy.editor');
+            Debugger::$email = option('jan-herman.tracy.adminEmail');
+            Debugger::$editor = option('jan-herman.tracy.editor');
         }
     ]
 ]);
