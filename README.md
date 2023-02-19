@@ -14,19 +14,19 @@ $kirby->trigger('kirby.render:before');
 
 ## Options
 
-##### adminEmail
+### adminEmail
 
 Default: `null`
 
 E-mail address for error notifications.
 
-##### editor
+### editor
 
 Default: `'vscode://file/%file:%line'`
 
 For more information see: [Tracy documentation](https://tracy.nette.org/en/open-files-in-ide)
 
-##### enableInPanel
+### enableInPanel
 
 Default: `false`
 
