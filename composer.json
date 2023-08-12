@@ -1,7 +1,7 @@
 {
     "name": "jan-herman/kirby-tracy",
     "description": "Kirby implementation of Tracy debugger.",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "type": "kirby-plugin",
     "license": "MIT",
     "homepage": "https://github.com/jan-herman/kirby-tracy",
@@ -15,7 +15,7 @@
     "require": {
         "php": "^8.1",
         "getkirby/composer-installer": "^1.2",
-        "tracy/tracy": "^2.9"
+        "tracy/tracy": "^2.10"
     },
     "extra": {
 		"installer-name": "tracy"

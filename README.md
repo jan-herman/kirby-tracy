@@ -31,3 +31,9 @@ For more information see: [Tracy documentation](https://tracy.nette.org/en/open-
 Default: `false`
 
 Whether to show show Tracy bar in the panel area.
+
+### logsDirectory
+
+Default: `$kirby->root('logs')`
+
+Where to keep Tracy logs.
