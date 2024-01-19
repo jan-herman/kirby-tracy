@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.1] - 2024-01-19
+### Changed
+- code refactoring
+
+
 ## [1.1.0] - 2023-08-12
 ### Added
 - 'logsDirectory' option
