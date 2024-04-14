@@ -1,7 +1,7 @@
 {
     "name": "jan-herman/kirby-tracy",
     "description": "Kirby implementation of Tracy debugger.",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "type": "kirby-plugin",
     "license": "MIT",
     "homepage": "https://github.com/jan-herman/kirby-tracy",
@@ -18,9 +18,14 @@
         "tracy/tracy": "^2.10"
     },
     "extra": {
-		"installer-name": "tracy"
-	},
+        "installer-name": "tracy"
+    },
     "config": {
         "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": {
+            "JanHerman\\Tracy\\": "lib/"
+        }
     }
 }

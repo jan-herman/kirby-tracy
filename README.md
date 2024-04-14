@@ -37,3 +37,9 @@ Whether to show show Tracy bar in the panel area.
 Default: `$kirby->root('logs')`
 
 Where to keep Tracy logs.
+
+### panels.page
+
+Default: `true`
+
+Whether to enable the page panel.

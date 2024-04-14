@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.0] - 2024-04-14
+### Added
+- Page panel
+
+
 ## [1.1.1] - 2024-01-19
 ### Changed
 - code refactoring
