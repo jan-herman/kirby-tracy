@@ -144,7 +144,7 @@ class PagePanel implements IBarPanel
                         if (in_array($field['type'], ['structure', 'synced-structure', 'object', 'button'])) {
                             $data = [];
 
-                            if ($field['type'] === 'structure') {
+                            if (in_array($field['type'], ['structure', 'synced-structure'])) {
                                 $data = $field_object->toStructure()->first()->content()->toArray();
                             } else {
                                 $data = $field_object->yaml();

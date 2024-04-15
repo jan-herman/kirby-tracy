@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.1] - 2024-04-15
+## [1.2.2] - 2024-04-15
 ### Added
 - support for synced-structure field in page panel
 
