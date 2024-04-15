@@ -141,7 +141,7 @@ class PagePanel implements IBarPanel
                 // field value
                 if ($field_object instanceof \Kirby\Content\Field) {
                     if ($field_object->isNotEmpty()) {
-                        if ($field['type'] === 'structure' || $field['type'] === 'object' || $field['type'] === 'button') {
+                        if (in_array($field['type'], ['structure', 'synced-structure', 'object', 'button'])) {
                             $data = [];
 
                             if ($field['type'] === 'structure') {
@@ -159,7 +159,7 @@ class PagePanel implements IBarPanel
                                 $output .= '</tr>';
                             }
 
-                            if ($field['type'] === 'structure') {
+                            if (in_array($field['type'], ['structure', 'synced-structure'])) {
                                 $output .= '<tr><td colspan="2">...</td></tr>';
                             }
 
