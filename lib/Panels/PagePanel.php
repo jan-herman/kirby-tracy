@@ -127,7 +127,7 @@ class PagePanel implements IBarPanel
                     continue;
                 }
 
-                $field_object = $page->content()->{$field['name']}();
+                $field_object = $page->content()->get($field['name']);
 
                 // table row
                 $output .= '<tr>';

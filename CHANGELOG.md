@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.3] - 2024-07-30
+## [1.2.3 - 1.2.4] - 2024-07-30
 ### Fixed
 - Page panel error when using field with reserved names (i.e. image, videos, model, etc.)
 
