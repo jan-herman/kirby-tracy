@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.3] - 2024-07-30
+### Fixed
+- Page panel error when using field with reserved names (i.e. image, videos, model, etc.)
+
+
 ## [1.2.2] - 2024-04-15
 ### Added
 - support for synced-structure field in page panel
