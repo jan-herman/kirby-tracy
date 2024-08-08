@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.3.0] - 2024-08-08
+### Added
+- fromEmail option
+
+
 ## [1.2.3 - 1.2.4] - 2024-07-30
 ### Fixed
 - Page panel error when using field with reserved names (i.e. image, videos, model, etc.)

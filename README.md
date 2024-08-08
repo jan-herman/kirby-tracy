@@ -18,7 +18,13 @@ $kirby->trigger('kirby.render:before');
 
 Default: `null`
 
-E-mail address for error notifications.
+E-mail address to send error notifications to.
+
+### fromEmail
+
+Default: `null`
+
+E-mail address to send error notifications from.
 
 ### editor
 

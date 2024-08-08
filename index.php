@@ -13,6 +13,7 @@ use JanHerman\Tracy\Panels\PagePanel;
 Kirby::plugin('jan-herman/tracy', [
     'options' => [
         'adminEmail'    => null,
+        'fromEmail'     => null,
         'editor'        => 'vscode://file/%file:%line',
         'enableInPanel' => false,
         'logsDirectory' => null,
@@ -49,6 +50,11 @@ Kirby::plugin('jan-herman/tracy', [
             Debugger::$logDirectory = $logs_directory;
             Debugger::$email = option('jan-herman.tracy.adminEmail');
             Debugger::$editor = option('jan-herman.tracy.editor');
+
+            if (option('jan-herman.tracy.fromEmail')) {
+                $logger = Debugger::getLogger();
+                $logger->fromEmail = option('jan-herman.tracy.fromEmail');
+            }
 
             // add panels
             if (option('jan-herman.tracy.panels.page') && !$is_panel && $current_url_base_path !== 'api') {
