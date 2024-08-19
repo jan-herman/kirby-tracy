@@ -14,6 +14,12 @@ $kirby->trigger('kirby.render:before');
 
 ## Options
 
+### mode
+
+Default: `'detect'`
+
+[Tracy mode](https://tracy.nette.org/en/guide#toc-development-vs-production-mode). Can be one of the following: `'detect'`, `'development'`, `'staging'`, `'production'`, IP address or array of IP addresses.
+
 ### adminEmail
 
 Default: `null`

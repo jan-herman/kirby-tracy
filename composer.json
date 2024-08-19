@@ -1,7 +1,7 @@
 {
     "name": "jan-herman/kirby-tracy",
     "description": "Kirby implementation of Tracy debugger.",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "type": "kirby-plugin",
     "license": "MIT",
     "homepage": "https://github.com/jan-herman/kirby-tracy",

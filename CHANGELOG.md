@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.4.0] - 2024-08-19
+### Added
+- mode option
+
+
 ## [1.3.0] - 2024-08-08
 ### Added
 - fromEmail option
