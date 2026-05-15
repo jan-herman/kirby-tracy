@@ -2,17 +2,30 @@
 
 > [Kirby](https://getkirby.com) implementation of [Tracy debugger](https://tracy.nette.org/en/).
 
-## Usage
+## Options
 
-Requires non-standard hook `kirby.render:before` to initialize Tracy before any other output.
-
-Add the following snippet to your `public/index.php` before this line: `echo $kirby->render();`.
+All options are configured under the `jan-herman.tracy` prefix.
 
 ```php
-$kirby->trigger('kirby.render:before');
+return [
+    'jan-herman.tracy' => [
+        'mode' => 'detect',
+        'logDirectory' => null,
+        'debugger' => [
+            'editor' => 'vscode://file/%file:%line',
+        ],
+        'logger' => [
+            'email' => null,
+            'fromEmail' => null,
+            'emailSnooze' => null,
+        ],
+        'showBarInPanel' => false,
+        'panels' => [
+            'page' => true,
+        ],
+    ],
+];
 ```
-
-## Options
 
 ### mode
 
@@ -20,35 +33,69 @@ Default: `'detect'`
 
 [Tracy mode](https://tracy.nette.org/en/guide#toc-development-vs-production-mode). Can be one of the following: `'detect'`, `'development'`, `'staging'`, `'production'`, IP address or array of IP addresses.
 
-### adminEmail
+### logDirectory
+
+Default: `$kirby->root('logs')`
+
+Where to keep Tracy logs. The value can also be a callable that returns the directory path.
+
+### debugger
+
+Default:
+
+```php
+[
+    'editor' => 'vscode://file/%file:%line',
+]
+```
+
+Special option for configuring static properties on `Tracy\Debugger`.
+
+Each key in this array is assigned directly to the matching [debugger property](https://tracy.nette.org/en/configuring). For example:
+
+```php
+'jan-herman.tracy' => [
+    'debugger' => [
+        'editor' => 'phpstorm://open?file=%file&line=%line',
+        'maxDepth' => 4,
+        'maxLength' => 200,
+    ],
+],
+```
+
+This is equivalent to setting:
+
+```php
+Debugger::$editor = 'phpstorm://open?file=%file&line=%line';
+Debugger::$maxDepth = 4;
+Debugger::$maxLength = 200;
+```
+
+For editor URL formats, see the [Tracy documentation](https://tracy.nette.org/en/open-files-in-ide).
+
+### logger.email
 
 Default: `null`
 
-E-mail address to send error notifications to.
+E-mail address to send error notifications to. Error notifications are sent through Kirby's email system and use your configured Kirby email transport.
 
-### fromEmail
+### logger.fromEmail
 
 Default: `null`
 
 E-mail address to send error notifications from.
 
-### editor
+### logger.emailSnooze
 
-Default: `'vscode://file/%file:%line'`
+Default: `null`
 
-For more information see: [Tracy documentation](https://tracy.nette.org/en/open-files-in-ide)
+How long Tracy should wait before sending another e-mail notification for the same error.
 
-### enableInPanel
+### showBarInPanel
 
 Default: `false`
 
-Whether to show show Tracy bar in the panel area.
-
-### logsDirectory
-
-Default: `$kirby->root('logs')`
-
-Where to keep Tracy logs.
+Whether to show the Tracy bar in the Kirby Panel area.
 
 ### panels.page
 

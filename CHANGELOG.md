@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.0.0] - 2026-05-15
+### Added
+- `tracy.debugger` option for setting `Tracy\Debugger` static properties
+- `tracy.logger.email`, `tracy.logger.fromEmail` and `tracy.logger.emailSnooze` options
+- `tracy.logDirectory` option can now be a callable
+- emails are now sent through Kirby's email system
+
+### Changed
+- plugin initialization moved to `JanHerman\Tracy\TracyPlugin`
+- Kirby hook now only calls `TracyPlugin::init()`
+- Tracy now runs in panel (Debugger::$showBar is set to false instead of interupting Tracy initialization)
+- `tracy.enableInPanel` option renamed to `tracy.showBarInPanel`
+- `tracy.logsDirectory` option renamed to `tracy.logDirectory`
+- `editor` option moved under `tracy.debugger.editor`
+
+### Removed
+- need for non-standard `kirby.render:before` hook (uses `system.loadPlugins:after` instead)
+- old top-level `adminEmail`, `fromEmail` and `editor` options
+
+
 ## [1.4.0] - 2024-08-19
 ### Added
 - mode option
